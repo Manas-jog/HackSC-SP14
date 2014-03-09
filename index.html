@@ -1,0 +1,160 @@
+<html>
+	<head>
+		<title>KnowMore</title>
+	<style type="text/css">
+
+.bd{
+	background-image:url("./bg.jpg");
+	-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+.hacksc {
+	text-align:center;
+	-moz-box-shadow:inset 0px 1px 27px -3px #f5978e;
+	-webkit-box-shadow:inset 0px 1px 27px -3px #f5978e;
+	box-shadow:inset 0px 1px 27px -3px #f5978e;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+	background-color:#f24537;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:-4px;
+	border:3px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	font-style:normal;
+	height:61px;
+	line-height:61px;
+	width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:0px -5px 2px #402927;
+}
+.hacksc:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+	background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+	background-color:#c62d1f;
+}.hacksc:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+.classname {
+	-moz-box-shadow:inset 0px 1px 27px -3px #f5978e;
+	-webkit-box-shadow:inset 0px 1px 27px -3px #f5978e;
+	box-shadow:inset 0px 1px 27px -3px #f5978e;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+	background-color:#f24537;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:0px -4px 2px #810e05;
+}
+.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+	background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+	background-color:#c62d1f;
+}.classname:active {
+	position:relative;
+	top:1px;
+}
+</style>
+  </head>
+	<body class="bd"><div style="margin-top: 60px ;padding-left:150px; text-align:center">
+<a href="#" class="hacksc">KnowMore</a></div>
+<script type="text/javascript">
+function sendData()
+{	
+    if(document.getElementById("question")&&document.getElementById("answer")&&document.getElementById("question").value.trim()!="" && document.getElementById("answer").value.trim()!="")
+    {
+        var createJSON = "{\"question\":\""+document.getElementById("question").value+"\",\"answer\":\""+document.getElementById("answer").value+"\"}";
+	document.subForm.reset();
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://162.243.142.7:3000/question/insert", true);
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');    
+        xhr.send(createJSON);
+	alert("Question Posted");
+        return false;
+    }
+    else
+    {
+        alert("Please fill both the fields to continue.");
+        document.getElementById("question").focus();
+        return false;
+    }
+
+}
+</script>
+<form action="#" name="subForm" method="POST">		
+<table border="0" cellpadding="1" cellspacing="1" style="width: 600px;align:center" align="center"> 
+			<tbody>
+                <tr style="height:30px"><td></td></tr>
+                <tr style="height:30px"><td></td></tr>
+				<tr>
+					<td style="width:150px; color: black; font-weight:900 ; text-align:center">
+						FAQ Question</td>
+					<td>
+						<input maxlength="500" id="question" name="question" type="text" style="width:430px;height:30px;" autofocus/></td>
+				</tr>
+                <tr style="height:30px"><td></td></tr>
+				<tr>
+					<td style="width:150px; color: black; font-weight:900 ; text-align:center">
+						FAQ Answer</td>
+					<td >
+						<textarea style="width:430px;height:305px;"cols="50" name="answer" id ="answer" rows="20"></textarea></td>
+				</tr>
+                <tr style="height:30px"><td></td></tr>
+				<tr>
+					<td style="padding-left:160px;" colspan="2" align="center">
+						<input class="classname" type="button" name="submit" id="submit" value="Submit" onclick="return sendData();" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="classname" type="reset" name="clear" id="clear" value="Clear" />
+                        </td>
+					
+				</tr>
+			</tbody>
+		</table></form>
+        </body>
+</html>
+
